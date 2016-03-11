@@ -4,12 +4,16 @@
             <h1>Search</h1>
             <label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
-                <input type="search" placeholder="">
+                <input type="search" placeholder="Client Name" ng-model="clientNameFilter">
             </label>
         </form>
-        <div class="list card">
-            <div class="item item-divider">Card</div>
-            <div class="item item-body"></div>
-        </div>
+        <div ng-if="preloader" class="text-center"><img src="http://orig06.deviantart.net/df77/f/2013/094/8/d/loading_logofinal_by_zegerdon-d60eb1v.gif" alt=""></div>
+
+
+<div ng-repeat="entry in entries | filter:clientNameFilter">
+
+<div ng-if="entry.clientName.indexOf(clientNameFilter) > -1">
+<taskpanel custom-task-data="entry"  class="col-md-4 layout-fix"></taskpanel>
+</div>
     </ion-content>
 </ion-view>

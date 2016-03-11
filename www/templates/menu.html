@@ -6,7 +6,7 @@
                 <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
             </ion-nav-buttons>
         </ion-nav-bar>
-        <ion-nav-view name="side-menu21"></ion-nav-view>
+        <ion-nav-view name="dairy"></ion-nav-view>
     </ion-side-menu-content>
     <ion-side-menu side="left">
         <ion-header-bar class="bar-stable">
@@ -15,8 +15,12 @@
         <ion-content padding="false" class="side-menu-left has-header">
             <ion-list>
                 <ion-item ui-sref="menu.home" menu-close="">Home</ion-item>
-                <ion-item>Cart</ion-item>
-                <ion-item>Cloud</ion-item>
+                <ion-item ui-sref="menu.overview" menu-close="">Overview</ion-item>
+                <ion-item ui-sref="menu.recentEntries" menu-close="">Recent Entries</ion-item>
+                <ion-item ui-sref="menu.archive" menu-close="" ng-click="">Archived Entries</ion-item>
+                <ion-item ui-sref="menu.search" menu-close="">Search</ion-item>
+                <ion-item ui-sref="menu.aboutMe" menu-close="">About</ion-item>
+                <ion-item ui-sref="menu.contact" menu-close="">Contact</ion-item>
             </ion-list>
         </ion-content>
     </ion-side-menu>
