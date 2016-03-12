@@ -1,20 +1,67 @@
 <ion-view title="New Entry">
-    <ion-content overflow-scroll="true" padding="true" class="has-header">
-        <h1>New Entry</h1>
-        <form class="list">
-            <ion-toggle toggle-class="toggle-positive">Toggle</ion-toggle>
-            <ion-radio>Radio</ion-radio>
-            <label class="item item-input">
-                <span class="input-label">Input</span>
-                <input type="text" placeholder="">
-            </label>
-            <label class="item item-select">
-                <span class="input-label">Select</span>
-                <select></select>
-            </label>
-            <label class="item item-input">
-                <span class="input-label">Text</span><textarea placeholder=""> </textarea>
-            </label>
-        </form>
-    </ion-content>
+<ion-content overflow-scroll="true" padding="true" class="has-header">
+<h1>New Entry</h1>
+<a ui-sref="menu.home">Home</a>
+<form class="list"  method="post" name="newEntry">
+
+    <label class="item item-input">
+        <input type="text" name="client" placeholder="Client Name" ng-model="clientname" required>
+    </label>
+    <label class="item item-input">
+        <input type="text" name="platform"  placeholder="Platform" ng-model="platform" required>
+    </label>
+
+    <label class="item item-input">
+        <input type="text" name="url" placeholder="URL: www.example.com" ng-model="url" required>
+    </label>
+    <label class="item item-input">
+
+        <input type="text" name="workdone" placeholder="Work Done" ng-model="workdone" required>
+    </label>
+
+    <label class="item item-input">
+        <span class="input-label">Date:</span>
+        <input type="date" name="date" placeholder="date" ng-model="date" required>
+    </label>
+
+    <label class="item item-select">
+        <span class="input-label">Month Filter:</span>
+        <select name="monthfilter"  ng-model="monthfilter" required>
+            <option value="January">January</option>
+            <option value="February">February</option>
+            <option value="March">March</option>
+            <option value="May">May</option>
+            <option value="June">June</option>
+            <option value="July">July</option>
+            <option value="August">August</option>
+            <option value="September">September</option>
+            <option value="October">October</option>
+            <option value="November">November</option>
+            <option value="December">December</option>
+        </select>
+    </label>
+
+    <label class="item item-select">
+        <span class="input-label">Year Filter:</span>
+        <select name="yearfilter"  class="form-control" ng-model="yearfilter" required>
+            <option value="2016">2016</option>
+            <option value="2015">2015</option>
+
+        </select>
+    </label>
+
+    <label class="item item-input">
+        <textarea placeholder="Comments"  name="comments"  placeholder="Comments" ng-model="comments"></textarea>
+    </label>
+
+
+  <button class="button button-positive"  ng-click="submit(newEntry)">
+  Submit
+</button>
+<button class="button icon-left ion-home" ui-sref="menu.home">Home</button>
+<br>
+{{status}}
+
+</form>
+</ion-content>
 </ion-view>
